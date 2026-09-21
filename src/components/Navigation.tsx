@@ -1,4 +1,7 @@
+"use client";
+
 import { useState, useEffect } from "react";
+import { siteConfig, socials } from "@/data/portfolio";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface NavItem {
@@ -19,12 +22,7 @@ const navItems: NavItem[] = [
   { label: "Contact", href: "#contact", number: "04" },
 ];
 
-const socialItems: SocialItem[] = [
-  { label: "GitHub", href: "https://github.com/MAHESHPPAI" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/mahesh-p-pai-b0987b2a8/" },
-  { label: "Instagram", href: "https://www.instagram.com/mahesh_3.14_/" },
-  { label: "Email", href: "mailto:maheshpailinked@gmail.com" },
-];
+const socialItems: SocialItem[] = socials;
 
 const ease = [0.76, 0, 0.24, 1] as [number, number, number, number];
 const easeOut = [0.16, 1, 0.3, 1] as [number, number, number, number];
@@ -203,7 +201,7 @@ const Navigation = () => {
               exit={{ opacity: 0, transition: { duration: 0.6 } }}
               className="text-xs text-white/20 font-mono tracking-widest mt-8 md:mt-0 md:self-end"
             >
-              © 2026 MAHESH
+              © 2026 {siteConfig.name.toUpperCase()}
             </motion.p>
           </motion.div>
         )}
