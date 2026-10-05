@@ -5,12 +5,12 @@ import { stats } from "@/data/portfolio";
 
 const MagicBento = () => {
   return (
-    <section className="w-full bg-black text-white py-32">
+    <section className="w-full bg-black text-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-24">
-          <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em]">More About Me</h2>
+        <div className="mb-12 md:mb-16">
+          <h2 className="font-sans text-xs font-bold uppercase tracking-[0.2em] text-white/60">More About Me</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-40">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-12">
           {stats.map((stat) => (
             <SwissItem key={stat.label} {...stat} />
           ))}
@@ -20,9 +20,16 @@ const MagicBento = () => {
   );
 };
 
-const SwissItem = ({ value, suffix, label, description }) => {
+interface StatProps {
+  value: number;
+  suffix: string;
+  label: string;
+  description: string;
+}
+
+const SwissItem = ({ value, suffix, label, description }: StatProps) => {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
@@ -33,7 +40,7 @@ const SwissItem = ({ value, suffix, label, description }) => {
           animate();
         }
       },
-      { threshold: 0.4 } // Swiss: intentional visibility
+      { threshold: 0.4 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -44,13 +51,10 @@ const SwissItem = ({ value, suffix, label, description }) => {
     const duration = 1200;
     const startTime = performance.now();
 
-    const update = (time) => {
+    const update = (time: number) => {
       const progress = Math.min((time - startTime) / duration, 1);
       setCount(Math.floor(progress * value));
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      }
+      if (progress < 1) requestAnimationFrame(update);
     };
 
     requestAnimationFrame(update);
@@ -58,22 +62,14 @@ const SwissItem = ({ value, suffix, label, description }) => {
 
   return (
     <div ref={ref} className="flex flex-col items-start">
-
-      {/* Label */}
-      <span className="mb-4 font-sans text-[11px] font-bold uppercase tracking-[0.25em] text-white">
+      <span className="mb-2 font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
         {label}
       </span>
-
-      {/* Number */}
-      <h3 className="mb-6 font-sans text-8xl md:text-9xl font-bold tracking-tight leading-none">
+      <h3 className="mb-2 font-sans text-4xl md:text-5xl font-bold tracking-tight leading-none">
         {count.toLocaleString()}
         {suffix}
       </h3>
-
-      {/* Description */}
-      <p className="max-w-sm font-sans text-base leading-6 text-white/65">
-        {description}
-      </p>
+      <p className="max-w-xs font-sans text-sm leading-5 text-white/55">{description}</p>
     </div>
   );
 };

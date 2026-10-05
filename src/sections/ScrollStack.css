@@ -145,6 +145,12 @@
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+.live-btn-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
 
 .live-btn-star:hover {
   transform: scale(1.05);
@@ -228,6 +234,7 @@
 
   .live-btn-star {
     align-self: flex-start;
+    width : 100%;
   }
 
   .content-grid {

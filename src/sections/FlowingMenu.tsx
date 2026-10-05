@@ -84,11 +84,11 @@ const MenuItem: React.FC<MenuItemData & { speed: number; marqueeBgColor: string;
     <div 
       className={`menu__item ${isOpen ? 'is-open' : ''}`} 
       ref={itemRef} 
-      style={{ borderTop: isFirst ? 'none' : '1px solid black' }}
+      style={{ borderTop: isFirst ? 'none' : '1px solid rgba(255,255,255,0.15)' }}
     >
       <a 
         className="menu__item-link" 
-        href={link}
+        href={link} 
         onClick={handleTextClick}
       >
         {/* Main Text */}

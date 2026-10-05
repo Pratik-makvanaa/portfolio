@@ -32,7 +32,7 @@ const Footer = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
     },
   };
 
@@ -41,7 +41,7 @@ const Footer = () => {
 
       {/* Top Section: Info Grid */}
       <motion.div
-        className="px-6 md:px-12 lg:px-16 max-w-[1600px] mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-12 shrink-0"
+        className="px-6 md:px-12 lg:px-16 max-w-[1600px] mx-auto w-full flex flex-col md:flex-row md:justify-between gap-y-10 shrink-0"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -66,7 +66,7 @@ const Footer = () => {
         {/* Column 2: CHANNELS */}
         <motion.div variants={itemVariants} className="flex flex-col gap-1">
           <h3 className="font-sans text-xs font-bold uppercase tracking-widest mb-4 text-white/80">
-            Channels
+            Connect
           </h3>
           <div className="flex flex-col gap-2">
             <a
@@ -94,35 +94,12 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Column 3: COLOPHON + YEAR */}
-        <motion.div variants={itemVariants} className="flex flex-col h-full justify-between">
-          <div className="flex flex-col gap-1">
-            <h3 className="font-sans text-xs font-bold uppercase tracking-widest mb-4 text-white/80">
-              Colophon
-            </h3>
-            <p className="font-sans text-xs md:text-sm font-medium uppercase tracking-wide text-white/60">
-              Built With: Next.js / GSAP / Framer / Lenis
-            </p>
-            <p className="font-sans text-xs md:text-sm font-medium uppercase tracking-wide text-white/60">
-              Typeface: Inter / Halvetica
-            </p>
-            <p className="font-sans text-xs md:text-sm font-medium uppercase tracking-wide text-white/60">
-              Deployed On: Vercel
-            </p>
-          </div>
-
-          <div className="mt-8 md:mt-0">
-            <p className="font-sans text-xs md:text-sm font-bold uppercase tracking-widest text-white">
-              2026
-            </p>
-          </div>
-        </motion.div>
       </motion.div>
 
       {/* Bottom Section: Branding Text */}
       <motion.div
         style={{ opacity: textOpacity, scale: textScale }}
-        className="w-full flex-1 flex flex-col justify-center items-center overflow-hidden select-none pb-4"
+        className="w-full flex-1 flex flex-col justify-end items-center overflow-hidden select-none pb-0"
       >
         <h1 className="font-sans font-black text-[23vw] leading-[0.8] text-white uppercase tracking-tighter flex items-start">
           {siteConfig.name}

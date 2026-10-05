@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Full Stack Developer",
   tagline: ["Driven", "by logic"],
   description:
-    "Building full-stack web applications, integrating REST APIs, and turning complex workflows into clean, responsive interfaces.",
+    "MCA student with strong knowledge of full-stack web development using MERN Stack, React.js, Next.js, and SQL. Experienced in building responsive web applications, RESTful API integration, authentication, and modern web technologies. Currently exploring AI-integrated web development and software engineering.",
   location: "Indore, Madhya Pradesh, India",
   email: "pratik.makvana1606@gmail.com",
   phone: "+91 7247637104",
@@ -17,7 +17,7 @@ export const siteConfig = {
 
 export const education = {
   primary: {
-    school: "SGSITS, Indore (RGPV)",
+    school: "SGSITS, Indore ",
     degree: "MCA — Post Graduation (2025–2027)",
   },
   secondary: {
@@ -41,12 +41,12 @@ export const experience = [
 
 export const focus = [
   "Full Stack Web Development",
-  "RESTful API Integration & MVC Architecture",
+  ,
 ];
 
 export const projects = [
   {
-    id: "001",
+    id: "01",
     title: "ColdVault — Cold Storage Management",
     stack: "React / Tailwind CSS / Spring Boot / MySQL",
     description:
@@ -56,7 +56,7 @@ export const projects = [
     cta: "View Project",
   },
   {
-    id: "002",
+    id: "02",
     title: "StayAdda — Hotel Booking Platform",
     stack: "Node.js / Express / EJS / MongoDB",
     description:
@@ -67,11 +67,11 @@ export const projects = [
   },
 ];
 
+
 export const stats = [
   { value: 2, suffix: "+", label: "Projects Built", description: "From concept to deployment across full-stack stacks." },
   { value: 2, suffix: "+", label: "Internships", description: "Real-world experience with React, Next.js, and Node.js." },
   { value: 10, suffix: "+", label: "Technologies", description: "React, Next.js, Node.js, MongoDB, MySQL, and more." },
-  { value: 1, suffix: "st", label: "Systems First", description: "Clean architecture and maintainable code drive every build." },
 ];
 
 export const skillCategories = [
@@ -110,8 +110,71 @@ export const skillCategories = [
   },
 ];
 
+
 export const socials = [
   { label: "GitHub", href: siteConfig.links.github },
   { label: "LinkedIn", href: siteConfig.links.linkedin },
   { label: "Email", href: `mailto:${siteConfig.email}` },
+  { label: "LeetCode", href: "https://leetcode.com/YOUR_USERNAME", icon: "https://cdn.simpleicons.org/leetcode/ffffff" },
+];
+
+export const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "Timeline", href: "#timeline" },
+  { label: "Philosophy", href: "#philosophy" },
+  { label: "Contact", href: "#contact" },
+];
+
+export const resumeUrl = "/resume.pdf";
+// timeline — BCA added at the end (oldest)
+export const timeline = [
+  {
+    period: "2025 – 2027",
+    role: "MCA — Post Graduation",
+    org: "SGSITS, Indore (RGPV)",
+    meta: "Full-time · Computer Applications",
+    bullets: [
+      "Deepening backend and systems-design fundamentals",
+      "Building full-stack projects alongside coursework",
+    ],
+    tags: ["Java", "SQL", "DSA"],
+    icon: "graduation",
+  },
+  {
+    period: "May 2025 – Oct 2025",
+    role: "Full Stack Developer Intern",
+    org: "Freelance Team Collaboration",
+    meta: "Remote · Team Project",
+    bullets: [
+      "Built REST APIs and responsive interfaces for client workflows",
+      "Collaborated with a distributed team using Git and MVC architecture",
+    ],
+    tags: ["React", "Node.js", "MongoDB"],
+    icon: "briefcase",
+  },
+  {
+    period: "June 2024 – Aug 2024",
+    role: "Frontend Development Intern",
+    org: "IBM SkillsBuild",
+    meta: "Internship Program",
+    bullets: [
+      "Developed responsive UI components in React",
+      "Practiced industry-standard frontend workflows and code review",
+    ],
+    tags: ["React", "HTML/CSS", "JavaScript"],
+    icon: "code",
+  },
+  {
+    period: "2022 – 2025",
+    role: "BCA — Graduation",
+    org: "Mandsaur University",
+    meta: "7.45 CGPA",
+    bullets: [
+      "Built strong fundamentals in programming, DBMS, and web technologies",
+      "Completed academic projects using core web development concepts",
+    ],
+    tags: ["C", "Java", "DBMS"],
+    icon: "graduation",
+  },
 ];

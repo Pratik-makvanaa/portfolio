@@ -38,3 +38,16 @@
     transform: rotate(360deg);
   }
 }
+/* Compact pill variant — used for navbar links, resume button, and social buttons */
+.star-pill > .inner-content {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.05rem 2rem !important;
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+  white-space: nowrap;
+}

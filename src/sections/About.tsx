@@ -1,118 +1,99 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { education, experience, focus } from "@/data/portfolio";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, type LucideIcon,} from "lucide-react";
+import { siteConfig, education, focus, socials } from "@/data/portfolio";
+import StarBorder from "@/components/StarBorder";
+
+const iconMap: Record<string, LucideIcon> = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Email: Mail,
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+};
 
 const About = () => {
-  // Safe window height check for SSR
-  const [vh, setVh] = useState(
-    typeof window !== "undefined" ? window.innerHeight : 800
-  );
-
-  useEffect(() => {
-    const updateVh = () => setVh(window.innerHeight);
-    updateVh(); // Set on mount
-    window.addEventListener("resize", updateVh);
-    return () => window.removeEventListener("resize", updateVh);
-  }, []);
-
-  const { scrollY } = useScroll();
-
-  // Scroll mapping: 
-  // As the user scrolls from 0 to 100vh (the Hero height), 
-  // the text precisely fades in and slides up. We stagger the start/end points.
-
-  // Section 1: Context Label
-  const y1 = useTransform(scrollY, [0, vh * 0.4], [80, 0]);
-  const opacity1 = useTransform(scrollY, [0, vh * 0.3], [0, 1]);
-
-  // Section 2: Education
-  const y2 = useTransform(scrollY, [vh * 0.1, vh * 0.5], [80, 0]);
-  const opacity2 = useTransform(scrollY, [vh * 0.1, vh * 0.4], [0, 1]);
-
-  // Section 3: Experience
-  const y3 = useTransform(scrollY, [vh * 0.2, vh * 0.6], [80, 0]);
-  const opacity3 = useTransform(scrollY, [vh * 0.2, vh * 0.5], [0, 1]);
-
-  // Section 4: Focus
-  const y4 = useTransform(scrollY, [vh * 0.3, vh * 0.7], [80, 0]);
-  const opacity4 = useTransform(scrollY, [vh * 0.3, vh * 0.6], [0, 1]);
-
   return (
-    <section className="h-screen w-full bg-white text-black font-sans px-6 md:px-12 lg:px-16 overflow-hidden flex items-center justify-center relative">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-y-8 md:gap-x-12 w-full max-w-[1600px] mx-auto">
-
-        {/* Left Column: Context Label */}
-        <motion.div
-          className="md:col-span-3 lg:col-span-3 pt-2"
-          style={{ y: y1, opacity: opacity1 }}
-        >
-          <h2 className="font-sans text-xs md:text-sm font-bold uppercase tracking-widest">
-            Background & Data
-          </h2>
+    <section
+      id="about"
+      className="min-h-screen w-full bg-black text-white font-sans px-6 md:px-12 lg:px-16 pt-28 md:pt-32 pb-16 flex flex-col justify-center relative"
+    >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-[1200px] mx-auto w-full flex flex-col gap-8"
+      >
+        <motion.div variants={item} className="flex items-center gap-2">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-400" />
+          </span>
+          <span className="text-[10px] font-black tracking-[0.25em] uppercase text-white/70">
+            {siteConfig.availability}
+          </span>
         </motion.div>
 
-        {/* Right Column: The Data List */}
-        <div className="md:col-span-9 lg:col-span-9 flex flex-col gap-10 md:gap-12">
+        <motion.p variants={item} className="font-mono text-xs md:text-sm text-white/50 tracking-widest uppercase">
+          {siteConfig.title}
+        </motion.p>
 
-          {/* 01. EDUCATION */}
-          <motion.div style={{ y: y2, opacity: opacity2 }} className="flex flex-col gap-2">
-            <h3 className="font-sans text-xs md:text-sm font-bold uppercase tracking-wide opacity-100 mb-1">
-              01. Education
-            </h3>
-            <div className="flex flex-col">
-              <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                {education.primary.school}
-              </p>
-              <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                {education.primary.degree}
-              </p>
-              <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight mt-4">
-                {education.secondary.school}
-              </p>
-              <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                {education.secondary.degree}
-              </p>
-            </div>
-          </motion.div>
+        <motion.h1 variants={item} className="font-mono font-bold text-4xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-white">
+          Hello I&apos;m <span className="text-white">{siteConfig.name}</span>
+        </motion.h1>
 
-          {/* 02. EXPERIENCE */}
-          <motion.div style={{ y: y3, opacity: opacity3 }} className="flex flex-col gap-2">
-            <h3 className="font-sans text-xs md:text-sm font-bold uppercase tracking-wide opacity-100 mb-1">
-              02. Experience
-            </h3>
+        <motion.p variants={item} className="max-w-2xl text-sm md:text-base font-mono text-white/60 leading-relaxed">
+          {siteConfig.description}
+        </motion.p>
 
-            <div className="flex flex-col gap-6">
-              {experience.map((job) => (
-                <div key={job.company}>
-                  <p className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                    {job.company}
-                  </p>
-                  <p className="font-sans text-xl md:text-2xl lg:text-3xl font-normal text-black/70 leading-tight tracking-tight">
-                    {job.role} ({job.period})
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+        <motion.div variants={item} className="flex flex-wrap items-center gap-3 pt-2">
+          {socials.map(({ label, href, icon }) => {
+            const Icon = iconMap[label];
+            return (
+              <StarBorder
+                key={label}
+                as="a"
+                href={href}
+                target={href.startsWith("mailto") ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+                color="#00f2fe, #4facfe, #7000ff"
+                speed="8s"
+                className="star-pill"
+              >
+                {Icon ? <Icon size={16} strokeWidth={2.5} /> : <img src={icon} alt={label} className="w-4 h-4" />}
+                {label}
+              </StarBorder>
+            );
+          })}
+        </motion.div>
 
-          {/* 03. FOCUS */}
-          <motion.div style={{ y: y4, opacity: opacity4 }} className="flex flex-col gap-2">
-            <h3 className="font-sans text-xs md:text-sm font-bold uppercase tracking-wide opacity-100 mb-1">
-              03. Focus
-            </h3>
-            <ul className="flex flex-col">
-              {focus.map((item) => (
-                <li key={item} className="font-sans text-xl md:text-2xl lg:text-3xl font-bold leading-tight tracking-tight">
-                  {item}
+        <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 mt-2 border-t border-white/15">
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white/50 mb-2">Education</h3>
+            <p className="text-lg font-bold">{education.primary.school}</p>
+            <p className="text-sm text-white/60">{education.primary.degree}</p>
+          </div>
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white/50 mb-2">Focus</h3>
+            <ul>
+              {focus.map((f) => (
+                <li key={f} className="text-sm font-semibold text-white/80">
+                  {f}
                 </li>
               ))}
             </ul>
-          </motion.div>
-
-        </div>
-      </div>
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
