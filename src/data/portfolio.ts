@@ -41,7 +41,6 @@ export const experience = [
 
 export const focus = [
   "Full Stack Web Development",
-  ,
 ];
 
 export const projects = [

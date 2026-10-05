@@ -1,92 +1,78 @@
-# Pratik Makvana — Full Stack Developer Portfolio
+# Portfolio
 
-A modern personal portfolio for **Pratik Makvana**, a full-stack developer focused on building responsive web applications, REST APIs, and clean user experiences.
+A modern portfolio website built with **Next.js, React, TypeScript, and Tailwind CSS**.
 
-## 👨‍💻 About Me
-
-I'm **Pratik Makvana**, a Full Stack Developer and MCA student based in Indore, Madhya Pradesh.
-
-- 🎓 **MCA** — SGSITS, Indore (2025–2027)
-- 🎓 **BCA** — Mandsaur University (completed 2025)
-- 💻 Focus: Full Stack Web Development and RESTful API integration
-- 📍 Indore, Madhya Pradesh, India
-- 🚀 Currently available for work opportunities
-
-## 🧰 Tech Stack
-
-### Languages
-
-- JavaScript
-- SQL
-- HTML/CSS
+## 🧰 Technologies
 
 ### Frontend
-
-- React.js
 - Next.js
+- React.js
+- TypeScript
 - Tailwind CSS
-- Bootstrap
-
-### Backend
-
-- Node.js
-- Express.js
-- REST APIs
-- MVC Architecture
-
-### Databases & Tools
-
-- MongoDB
-- MySQL
-- Git & GitHub
-- Postman
 
 ### UI & Animation
-
 - Framer Motion
 - GSAP
 - Lenis
 - Radix UI
 - Lucide React
 
-## ⚙️ Local Setup
+### Development Tools
+- Node.js
+- npm
+- Git
+- GitHub
+
+## ⚙️ Installation
 
 ### Prerequisites
 
+Make sure you have installed:
+
 - Node.js 18+
 - npm
+- Git
 
-### Installation
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Pratik-makvanaa/portfolio.git
 cd portfolio
+```
+
+### Install Dependencies
+
+```bash
 npm install
 ```
 
-### Run in Development
+## 🚀 Run Development Server
 
 ```bash
 npm run dev
 ```
 
-Open **http://localhost:3000** in your browser.
+Open:
 
-### Production Build
-
-```bash
-npm run build
-npm run start
+```text
+http://localhost:3000
 ```
-## 📫 Contact
 
-- **Email:** [pratik.makvana1606@gmail.com](mailto:pratik.makvana1606@gmail.com)
-- **GitHub:** [Pratik-Makvanaa](https://github.com/Pratik-Makvanaa)
-- **LinkedIn:** [pratik-makvana](https://www.linkedin.com/in/pratik-makvana)
-- **Location:** Indore, Madhya Pradesh, India
+## 📁 Project Structure
 
----
-
-<p align="center">
-  Built by <strong>Pratik Makvana</strong> · 2026
-</p>
+```text
+portfolio/
+├── public/
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── data/
+│   ├── hooks/
+│   ├── lib/
+│   └── sections/
+├── next.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+├── package.json
+└── README.md
+```

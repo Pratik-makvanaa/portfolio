@@ -15,7 +15,7 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ children, item
 interface ScrollStackProps {
   className?: string;
   children: ReactNode;
-  itemDistance?: number;
+  itemDistance?: number;  
   itemScale?: number;
   itemStackDistance?: number;
   stackPosition?: string;
@@ -47,7 +47,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   const animationFrameRef = useRef<number | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
   const cardsRef = useRef<HTMLElement[]>([]);
-  const lastTransformsRef = useRef(new Map<number, any>());
+  // const lastTransformsRef = useRef(new Map<number, any>());
   const isUpdatingRef = useRef(false);
 
   const calculateProgress = useCallback((scrollTop: number, start: number, end: number) => {

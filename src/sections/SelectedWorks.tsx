@@ -305,7 +305,9 @@ const SelectedWorks = () => {
           threadPathRef.current.style.strokeDasharray = `${len}`;
           threadPathRef.current.style.strokeDashoffset = `${len}`;
         }
-      } catch (e) { }
+      } catch (e) {
+        console.warn("Unable to calculate thread path length:", e);
+       }
     }
 
     const scrollY = window.scrollY;
