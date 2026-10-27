@@ -11,6 +11,7 @@ export const siteConfig = {
   links: {
     github: "https://github.com/Pratik-Makvanaa",
     linkedin: "https://www.linkedin.com/in/pratik-makvana",
+    leetcode: "https://leetcode.com/u/pratik_makvanaa/",
   },
   availability: "Available for work",
 };
@@ -50,9 +51,10 @@ export const projects = [
     stack: "React / Tailwind CSS / Spring Boot / MySQL",
     description:
       "Cold storage management and billing system with responsive dashboards, chamber management workflows, and REST API integration.",
-    links: { live: "https://github.com/Pratik-Makvanaa", code: "https://github.com/Pratik-Makvanaa" },
+    links: { live: "https://coldvault-4kr93bjgy-pratik-makvanas-projects.vercel.app/", code: "https://github.com/Pratik-makvanaa/coldvault-" },
     image: "/p1.png",
-    cta: "View Project",
+    cta: "View Live",
+    ctaa: "View on GitHub"
   },
   {
     id: "02",
@@ -60,9 +62,10 @@ export const projects = [
     stack: "Node.js / Express / EJS / MongoDB",
     description:
       "Full-stack hotel booking platform with authentication, hotel listings, reviews, and booking management using MVC architecture.",
-    links: { live: "https://github.com/Pratik-Makvanaa", code: "https://github.com/Pratik-Makvanaa" },
+    links: { live: "https://github.com/Pratik-makvanaa/StayAdda", code: "https://github.com/Pratik-makvanaa/StayAdda" },
     image: "/p2.png",
-    cta: "View on GitHub",
+    cta: "View Live",
+    ctaa: "View on GitHub"
   },
 ];
 
@@ -78,7 +81,7 @@ export const skillCategories = [
     link: "#",
     text: "Languages",
     items: [
-      { name: "Java", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      // { name: "Java", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
       { name: "JavaScript", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
       { name: "SQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
       { name: "HTML/CSS", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
@@ -114,7 +117,7 @@ export const socials = [
   { label: "GitHub", href: siteConfig.links.github },
   { label: "LinkedIn", href: siteConfig.links.linkedin },
   { label: "Email", href: `mailto:${siteConfig.email}` },
-  { label: "LeetCode", href: "https://leetcode.com/YOUR_USERNAME", icon: "https://cdn.simpleicons.org/leetcode/ffffff" },
+  { label: "LeetCode", href: siteConfig.links.leetcode, icon: "https://cdn.simpleicons.org/leetcode/ffffff" },
 ];
 
 export const navLinks = [
@@ -131,10 +134,10 @@ export const timeline = [
   {
     period: "2025 – 2027",
     role: "MCA — Post Graduation",
-    org: "SGSITS, Indore (RGPV)",
-    meta: "Full-time · Computer Applications",
+    org: "SGSITS, Indore ",
+    meta: "Full-time",
     bullets: [
-      "Deepening backend and systems-design fundamentals",
+      "improving skills in core programming",
       "Building full-stack projects alongside coursework",
     ],
     tags: ["Java", "SQL", "DSA"],
@@ -143,13 +146,12 @@ export const timeline = [
   {
     period: "May 2025 – Oct 2025",
     role: "Full Stack Developer Intern",
-    org: "Freelance Team Collaboration",
     meta: "Remote · Team Project",
     bullets: [
       "Built REST APIs and responsive interfaces for client workflows",
-      "Collaborated with a distributed team using Git and MVC architecture",
+      "Collaborated with a distributed team using Git",
     ],
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["React","Next.js", "Node.js", "MongoDB"],
     icon: "briefcase",
   },
   {
@@ -161,14 +163,13 @@ export const timeline = [
       "Developed responsive UI components in React",
       "Practiced industry-standard frontend workflows and code review",
     ],
-    tags: ["React", "HTML/CSS", "JavaScript"],
+    tags: ["HTML/CSS", "JavaScript"],
     icon: "code",
   },
   {
     period: "2022 – 2025",
     role: "BCA — Graduation",
     org: "Mandsaur University",
-    meta: "7.45 CGPA",
     bullets: [
       "Built strong fundamentals in programming, DBMS, and web technologies",
       "Completed academic projects using core web development concepts",

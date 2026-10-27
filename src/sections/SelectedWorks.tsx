@@ -28,6 +28,7 @@ const ScrollStackCard = ({ project, index }: ScrollStackCardProps) => {
           </div>
         </div>
 
+        <div className="project-actions">
         <StarBorder
           as="a"
           href={project.links.live}
@@ -39,6 +40,18 @@ const ScrollStackCard = ({ project, index }: ScrollStackCardProps) => {
         >
           {project.cta}
         </StarBorder>
+        <StarBorder
+          as="a"
+          href={project.links.code}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="live-btn-star"
+          color="#f6d365, #fda085"
+          speed="3s"
+        >
+          {project.ctaa}
+        </StarBorder>
+        </div>
       </div>
 
       <div className="content-grid">

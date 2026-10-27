@@ -102,9 +102,15 @@
 /* --- HEADER AREA --- */
 .card-top-row {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+.project-actions{
+   display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .id-brand-group {

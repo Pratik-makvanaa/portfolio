@@ -86,7 +86,7 @@ const About = () => {
             <h3 className="text-xs font-bold uppercase tracking-widest text-white/50 mb-2">Focus</h3>
             <ul>
               {focus.map((f) => (
-                <li key={f} className="text-sm font-semibold text-white/80">
+                <li key={f} className="text-lg font-bold">
                   {f}
                 </li>
               ))}

@@ -2,6 +2,7 @@
 
 A modern portfolio website built with **Next.js, React, TypeScript, and Tailwind CSS**.
 
+
 ## 🧰 Technologies
 
 ### Frontend
